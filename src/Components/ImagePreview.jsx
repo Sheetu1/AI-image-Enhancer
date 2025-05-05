@@ -20,7 +20,7 @@ const ImagePreview = (props) => {
         <h2 className="text-xl font-semibold text-center bg-blue-800 text-white py-2">
           Enhanced image
         </h2>
-        {props.enhanced ? <img src="" alt="" className="w-full h-full object-cover" /> : 
+        {props.enhanced ? <img src="" alt="image" className="w-full h-full object-cover" /> : 
         <div className="flex items-center justify-center h-80 bg-gray-200 ">No Enhanced Image</div>
          }
       </div>
