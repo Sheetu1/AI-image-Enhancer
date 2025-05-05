@@ -8,10 +8,20 @@ const Home = () => {
   const [enhancedImage, setenhancedImage] = useState(null);
   const [loading, setloading] = useState(false);
 
-  const UploadImageHandler = (file) => {
+  const UploadImageHandler = async (file) => {
     setuploadImage(URL.createObjectURL(file));
     setloading(true);
     // and now call the api enhance the image
+    try{
+      const enhancedURL = await enhancedImageAPI(file);
+      setenhancedImage(enhancedURL);
+      setloading(false);
+
+    }
+    catch(error){
+
+    }
+
     
   };
   return (
