@@ -1,6 +1,6 @@
 import React from "react";
 
-const ImagePreview = () => {
+const ImagePreview = (props) => {
   return (
     <div className="mt-8  grid grid-cols-1 md:grid-cols-2  gap-6 w-full max-w-4xl ">
       {/* Original image */}
@@ -8,8 +8,11 @@ const ImagePreview = () => {
         <h2 className="text-xl font-semibold text-center bg-gray-800 text-white py-2">
           Original image
         </h2>
-        <img src="" alt="" className="w-full h-full object-cover" />
+        {props.uploaded ? 
+         <img src={props.uploaded} alt="" className="w-full h-full object-contain" /> : 
         <div className="flex items-center justify-center h-80 bg-gray-200 ">No Image Selected</div>
+          }
+       
       </div>
 
       {/* Enhance image */}
@@ -17,8 +20,9 @@ const ImagePreview = () => {
         <h2 className="text-xl font-semibold text-center bg-blue-800 text-white py-2">
           Enhanced image
         </h2>
-        <img src="" alt="" className="w-full h-full object-cover" />
+        {props.enhanced ? <img src="" alt="" className="w-full h-full object-cover" /> : 
         <div className="flex items-center justify-center h-80 bg-gray-200 ">No Enhanced Image</div>
+         }
       </div>
     </div>
   );
