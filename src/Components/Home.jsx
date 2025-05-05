@@ -1,8 +1,13 @@
 import React from 'react'
+import ImagePreview from './ImagePreview'
+import ImageUpload from './ImageUpload'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+        <ImageUpload/>
+        <ImagePreview/>
+    </div>
   )
 }
 
