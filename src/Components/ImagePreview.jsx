@@ -22,7 +22,7 @@ const ImagePreview = (props) => {
           Enhanced image
         </h2>
         {props.enhanced && !props.loading && (
-          <img src="" alt="image" className="w-full h-full object-cover" />
+          <img src="" alt="" className="w-full h-full object-cover" />
         )} 
         {props.loading ? (
           <Loading/>

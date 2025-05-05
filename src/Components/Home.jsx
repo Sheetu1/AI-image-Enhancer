@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import ImagePreview from "./ImagePreview";
 import ImageUpload from "./ImageUpload";
+import { enhanceImageAPI } from "../Utils/enhanceImageAPI";
 
 const Home = () => {
   const [uploadImage, setuploadImage] = useState(null);
@@ -13,7 +14,7 @@ const Home = () => {
     setloading(true);
     // and now call the api enhance the image
     try{
-      const enhancedURL = await enhancedImageAPI(file);
+      const enhancedURL = await enhanceImageAPI(file);
       setenhancedImage(enhancedURL);
       setloading(false);
 
