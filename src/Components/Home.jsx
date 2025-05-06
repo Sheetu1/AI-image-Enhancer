@@ -17,17 +17,14 @@ const Home = () => {
       setloading(false);
       console.log(enhancedURL?.image);
     } catch (error) {
-      console.log(error);
-      alert("Error while Enhancing the image. Please try again later.");
+      console.error(error);
+      alert("Error while enhancing the image. Please try again later.");
       setloading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-50 to-gray-200 py-10 px-4 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
-        ✨ AI Image Enhancer
-      </h1>
+    <div className="w-full max-w-5xl flex flex-col items-center gap-8">
       <ImageUpload UploadImageHandler={UploadImageHandler} />
       <ImagePreview
         loading={loading}

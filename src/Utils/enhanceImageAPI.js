@@ -48,7 +48,7 @@ const uploadImage = async (file) => {
 
 const fetchEnhancedImage = async (taskId) => {
   // fetch enhanced image
-  // "/api/tasks/visual/scale/{task_id}"---get
+ 
   const { data } = await axios.get(
     `${BASE_URL}/api/tasks/visual/scale/${taskId}`,
     {
@@ -80,4 +80,4 @@ const pollForEnhancedImage = async (taskId, retries  = 0) =>{
 } 
 
 
-//   "https://techhk.aoscdn.com/api/tasks/visual/scale",
+
