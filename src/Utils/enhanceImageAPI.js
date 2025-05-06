@@ -7,7 +7,7 @@ const BASE_URL = "https://techhk.aoscdn.com";
 export const enhanceImageAPI = async (file) => {
   try {
     const taskId = await uploadImage(file);
-    console.log("Image uploaded successfully, Task ID:", taskId);
+    console.log("Image Uploaded Successfully, Task ID:", taskId);
 
 
     // polling for the task status
@@ -38,7 +38,7 @@ const uploadImage = async (file) => {
 
   console.log("Upload response data:", data);
 
-  // ✅ Fix: throw error ONLY if task_id is missing
+  // ✅ Fix: throw error only if task_id is missing
   if (!data?.data?.task_id) {
     throw new Error("Failed to upload image! Task ID not found.");
   }
