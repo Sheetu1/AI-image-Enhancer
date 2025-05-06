@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import ImagePreview from "./ImagePreview";
 import ImageUpload from "./ImageUpload";
 import { enhanceImageAPI } from "../Utils/enhanceImageAPI";
@@ -12,28 +11,30 @@ const Home = () => {
   const UploadImageHandler = async (file) => {
     setuploadImage(URL.createObjectURL(file));
     setloading(true);
-    // and now call the api enhance the image
-    try{
+    try {
       const enhancedURL = await enhanceImageAPI(file);
       setenhancedImage(enhancedURL);
       setloading(false);
-
+      console.log(enhancedURL?.image);
+    } catch (error) {
+      console.log(error);
+      alert("Error while Enhancing the image. Please try again later.");
+      setloading(false);
     }
-    catch(error){
-
-    }
-
-    
   };
+
   return (
-    <>
-      <ImageUpload  UploadImageHandler={UploadImageHandler}/>
+    <div className="min-h-screen bg-gradient-to-r from-gray-50 to-gray-200 py-10 px-4 flex flex-col items-center">
+      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+        ✨ AI Image Enhancer
+      </h1>
+      <ImageUpload UploadImageHandler={UploadImageHandler} />
       <ImagePreview
         loading={loading}
         uploaded={uploadImage}
-        enhanced={enhancedImage}
+        enhanced={enhancedImage?.image}
       />
-    </>
+    </div>
   );
 };
 
