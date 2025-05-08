@@ -13,7 +13,7 @@ const App = () => {
         </p>
       </div>
       <Home />
-      <p className="text-sm text-gray-400 mt-10">Powered by @sheryians..</p>
+      <p className="text-sm text-gray-400 mt-10">Powered by @sheryians.</p>
     </div>
   );
 };
