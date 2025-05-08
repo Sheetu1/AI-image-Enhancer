@@ -24,7 +24,7 @@ const ImagePreview = (props) => {
         )}
       </div>
 
-      {/* enhanced image */}
+      {/* Enhanced Image */}
       <div className="bg-white shadow-xl rounded-xl overflow-hidden">
         <h2 className="text-xl font-semibold text-center bg-blue-800 text-white py-2">
           Enhanced Image
