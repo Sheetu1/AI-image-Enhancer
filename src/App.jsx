@@ -9,11 +9,11 @@ const App = () => {
           AI Image Enhancer
         </h1>
         <p className="text-lg text-gray-600 mt-2">
-          Upload your image and let AI enhance it in seconds!
+          Upload your image and let AI Enhance it in seconds!
         </p>
       </div>
       <Home />
-      <p className="text-sm text-gray-400 mt-10">Powered by @sheryians</p>
+      <p className="text-sm text-gray-400 mt-10">Powered by @sheryians..</p>
     </div>
   );
 };
