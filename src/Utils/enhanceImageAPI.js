@@ -47,7 +47,7 @@ const uploadImage = async (file) => {
 };
 
 const fetchEnhancedImage = async (taskId) => {
-  // fetch enhanced image
+  // Fetch Enhanced image
  
   const { data } = await axios.get(
     `${BASE_URL}/api/tasks/visual/scale/${taskId}`,
@@ -71,7 +71,7 @@ const pollForEnhancedImage = async (taskId, retries  = 0) =>{
         if(retries >=20){
             throw new Error("Max retries reached . please try again later");
         }
-        // wait for two second
+        // Wait for two Second
         await new Promise((resolve) => setTimeout(resolve, 2000));
         return pollForEnhancedImage(taskId, retries + 1);   
     }
